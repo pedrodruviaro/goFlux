@@ -24,12 +24,9 @@ export const InputWrapper = styled.div`
         cursor: text;
         transition: top 200ms ease-in, left 200ms ease-in,
             font-size 200ms ease-in;
-        background-color: ${(props) => props.theme.bodyBg};
 
-        @media (max-width: 720px) {
-            background-color: ${(props) => props.theme.light};
-            color: ${(props) => props.theme.dark};
-        }
+        background-color: ${(props) => props.theme.light};
+        color: ${(props) => props.theme.dark};
     }
     .form__input:focus ~ .form__label,
     .form__input:not(:placeholder-shown).form__input:not(:focus)

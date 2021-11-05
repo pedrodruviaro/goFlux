@@ -1,18 +1,42 @@
 import React, { useState } from "react";
-import { Container, BannerContainer, RightSide } from "./styles";
+import {
+    Container,
+    Hamburger,
+    HeaderHome,
+    LoginContainer,
+    Navbar,
+} from "./styles";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { Button } from "../../components/Button";
 import { InputWrapper } from "../../components/InputWrapper";
+import RegisterModal from "../../components/RegisterModal";
 
 export default function Index() {
     const [showPassword, setShowPassword] = useState(false);
+    const [navbarOpen, setNavbarOpen] = useState(false);
+    const [modalRegisterOpen, setModalRegisterOpen] = useState(false);
 
     return (
         <Container>
-            <BannerContainer>
-                <img src="/images/logo.png" alt="" />
-            </BannerContainer>
-            <RightSide>
+            <HeaderHome>
+                <h1>
+                    <img src="/images/logo.png" alt="" />
+                </h1>
+                <Hamburger
+                    active={navbarOpen}
+                    onClick={() => setNavbarOpen(!navbarOpen)}
+                >
+                    <span></span>
+                </Hamburger>
+
+                <Navbar open={navbarOpen}>
+                    <a href="/">Serviços</a>
+                    <a href="/">Sobre nós</a>
+                    <a href="/">Blog</a>
+                    <a href="/">Contato</a>
+                </Navbar>
+            </HeaderHome>
+            <LoginContainer>
                 <div>
                     <h1>Bem vindo à goFlux</h1>
                     <span>Conectamos empresas à prestadores de serviço.</span>
@@ -58,9 +82,20 @@ export default function Index() {
                 </div>
                 <section>
                     <span>Não tem uma conta?</span>
-                    <Button secondary>Cadastre-se agora</Button>
+                    <Button
+                        secondary
+                        onClick={() => setModalRegisterOpen(true)}
+                    >
+                        Cadastre-se agora
+                    </Button>
                 </section>
-            </RightSide>
+
+                {modalRegisterOpen && (
+                    <RegisterModal
+                        setModalRegisterOpen={setModalRegisterOpen}
+                    />
+                )}
+            </LoginContainer>
         </Container>
     );
 }
