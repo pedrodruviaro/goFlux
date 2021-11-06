@@ -77,7 +77,7 @@ export const Navbar = styled.nav`
         filter: brightness(0.8);
     }
 
-    a:last-child {
+    a.contact {
         background-color: ${(props) => props.theme.darkRed};
         padding: 0.25rem 1rem;
         border-radius: 20px;
@@ -100,6 +100,8 @@ export const Navbar = styled.nav`
 
         transition: transform 300ms ease;
         transform: translateX(100%);
+
+        font-size: 1.5rem;
 
         ${(props) =>
             props.open &&

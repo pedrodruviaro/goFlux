@@ -1,9 +1,10 @@
 import React from "react";
 import moment from "moment";
+import { Offer } from "./styles";
 
 export default function Index({ offer }) {
     return (
-        <li key={offer.createdAt}>
+        <Offer key={offer.createdAt}>
             <div>
                 <span>De: {offer.from}</span>
                 <span>Para: {offer.to}</span>
@@ -20,6 +21,6 @@ export default function Index({ offer }) {
                 <span>{moment(offer.createdAt).format("DD/MM/YYYY")}</span>
                 <a href="/">Ver Oferta</a>
             </div>
-        </li>
+        </Offer>
     );
 }

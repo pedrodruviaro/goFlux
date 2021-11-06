@@ -1,11 +1,11 @@
 import { Container } from "./styles";
-import HeaderHome from "../../components/HeaderHome";
+import Header from "../../components/Header";
 import LoginContainer from "../../components/LoginContainer";
 
 export default function Index() {
     return (
         <Container>
-            <HeaderHome />
+            <Header home />
             <LoginContainer />
         </Container>
     );

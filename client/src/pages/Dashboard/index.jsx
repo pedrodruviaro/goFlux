@@ -3,7 +3,8 @@ import { api } from "../../services/api";
 import { useAuth } from "../../hooks/useAuth";
 import { useEffect, useState } from "react";
 import Offer from "../../components/Offer";
-import DashboardHeader from "../../components/DashboardHeader";
+import { Button } from "../../components/Button";
+import Header from "../../components/Header";
 
 export default function Index() {
     const { user } = useAuth();
@@ -19,9 +20,12 @@ export default function Index() {
 
     return (
         <>
-            <DashboardHeader user={user} />
+            <Header user={user} />
             <Container>
-                <h2>Minhas Ofertas</h2>
+                <div>
+                    <h2>Minhas Ofertas</h2>
+                    <Button secondary>Nova Oferta</Button>
+                </div>
                 <ul>
                     {offers.map((offer) => (
                         <Offer offer={offer} key={offer.createdAt} />
