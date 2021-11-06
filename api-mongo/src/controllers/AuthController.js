@@ -8,7 +8,7 @@ class AuthController {
         // validating input
         const { error } = AuthValidation.register(req.body);
         if (error) {
-            return res.status(400).json(error.details[0].message);
+            return res.status(400).json({ error: error.details[0].message });
         }
 
         // checking if user already exists
@@ -54,7 +54,7 @@ class AuthController {
         // validating input
         const { error } = AuthValidation.login(req.body);
         if (error) {
-            return res.status(400).json(error.details[0].message);
+            return res.status(400).json({ error: error.details[0].message });
         }
 
         try {

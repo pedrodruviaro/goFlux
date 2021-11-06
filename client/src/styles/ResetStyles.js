@@ -84,6 +84,9 @@ a {
     color: inherit;
 }
 
+li {
+  list-style: none;
+}
 
 
 `;

@@ -24,8 +24,8 @@ export default function AuthContextProvider({ children }) {
         if (typeof userObj !== Object) history.push("/");
 
         setUser(userObj);
-        setAuthorized(true);
         api.defaults.headers.authorization = `Bearer ${userObj.token}`;
+        setAuthorized(true);
         history.push(location.pathname);
     }, [history, location.pathname]);
 
