@@ -1,8 +1,8 @@
 import React from "react";
 import { Redirect, Route, Switch } from "react-router";
 
-import Login from "./pages/Login";
-import Dashboard from "./pages/Dashboard";
+import { Login } from "./pages/Login";
+import { Dashboard } from "./pages/Dashboard";
 import { useAuth } from "./hooks/useAuth";
 import { Offers } from "./pages/Offers";
 import { SingleOffer } from "./pages/SingleOffer";

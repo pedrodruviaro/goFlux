@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { RegisterModal } from "./styles";
+import { Container } from "./styles";
 import { useClickOutside } from "../../hooks/useClickOutside";
 import { Button } from "../Button";
 import { useAuth } from "../../hooks/useAuth";
@@ -14,7 +14,7 @@ const formFields = [
     { id: "about" },
 ];
 
-export default function Index({ setModalRegisterOpen }) {
+export const RegisterModal = ({ setModalRegisterOpen }) => {
     const { register } = useAuth();
     const [isOpen, setIsOpen] = useState(true);
     const [form, setForm] = useState(
@@ -37,11 +37,11 @@ export default function Index({ setModalRegisterOpen }) {
     });
 
     return (
-        <RegisterModal active={isOpen} ref={domNode}>
+        <Container active={isOpen} ref={domNode}>
             <h1>Cria sua conta de maneira simples!</h1>
             <form onSubmit={onSubmit}>
                 <Button type="submit">Cadastrar</Button>
             </form>
-        </RegisterModal>
+        </Container>
     );
-}
+};

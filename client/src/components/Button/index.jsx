@@ -1,27 +1,6 @@
-import styled, { css } from "styled-components";
+import React from "react";
+import { Container } from "./styles";
 
-export const Button = styled.button`
-    cursor: pointer;
-    display: inline-block;
-    font-size: 1rem;
-    outline: none;
-    border: none;
-
-    padding: 0.5rem 1rem;
-
-    background-color: ${(props) => props.theme.darkBlue};
-    color: ${(props) => props.theme.light};
-    font-weight: 600;
-
-    transition: filter 200ms ease;
-
-    &:hover {
-        filter: brightness(0.8);
-    }
-
-    ${(props) =>
-        props.secondary &&
-        css`
-            background-color: ${(props) => props.theme.darkRed};
-        `}
-`;
+export const Button = ({ children, ...rest }) => {
+    return <Container {...rest}>{children}</Container>;
+};

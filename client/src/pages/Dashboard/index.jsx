@@ -6,7 +6,7 @@ import { Button } from "../../components/Button";
 import { Header } from "../../components/Header";
 import { OffersList } from "../../components/OffersList";
 
-export default function Index() {
+export const Dashboard = () => {
     const { user } = useAuth();
     const [offers, setOffers] = useState([]);
 
@@ -29,4 +29,4 @@ export default function Index() {
             </Container>
         </>
     );
-}
+};

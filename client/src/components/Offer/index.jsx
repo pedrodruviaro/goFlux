@@ -3,7 +3,7 @@ import moment from "moment";
 import { Container } from "./styles";
 import { Link } from "react-router-dom";
 
-export function Offer({ offer }) {
+export const Offer = ({ offer }) => {
     return (
         <Container>
             <div>
@@ -24,4 +24,4 @@ export function Offer({ offer }) {
             </div>
         </Container>
     );
-}
+};

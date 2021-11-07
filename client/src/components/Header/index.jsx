@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { Hamburger, Navbar, HeaderHome } from "./styles";
-import Profile from "../Profile";
+import { Profile } from "../Profile";
 import { Link } from "react-router-dom";
 
-export function Header(props) {
+export const Header = ({ home }) => {
     const [navbarOpen, setNavbarOpen] = useState(false);
     return (
         <HeaderHome>
@@ -17,7 +17,7 @@ export function Header(props) {
                 <span></span>
             </Hamburger>
 
-            {props.home ? (
+            {home ? (
                 <Navbar open={navbarOpen}>
                     <a href="/">Serviços</a>
                     <a href="/">Sobre nós</a>
@@ -35,4 +35,4 @@ export function Header(props) {
             )}
         </HeaderHome>
     );
-}
+};

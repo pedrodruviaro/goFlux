@@ -1,14 +1,14 @@
 import { BsPersonCircle } from "react-icons/bs";
 import { useAuth } from "../../hooks/useAuth";
-import { Profile } from "./styles";
+import { Container } from "./styles";
 
-export default function Index() {
+export const Profile = () => {
     const { user } = useAuth();
 
     return (
-        <Profile>
+        <Container>
             <BsPersonCircle />
             <span>{user.name}</span>
-        </Profile>
+        </Container>
     );
-}
+};

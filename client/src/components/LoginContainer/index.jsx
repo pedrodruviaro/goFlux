@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { Button } from "../Button";
-import RegisterModal from "../RegisterModal";
-import { LoginContainer } from "./styles";
+import { RegisterModal } from "../RegisterModal";
+import { Container } from "./styles";
 import { useAuth } from "../../hooks/useAuth";
 
-export default function Index() {
+export const LoginContainer = () => {
     const { login } = useAuth();
     const [modalRegisterOpen, setModalRegisterOpen] = useState(false);
     const [form, setForm] = useState({
@@ -23,7 +23,7 @@ export default function Index() {
     };
 
     return (
-        <LoginContainer>
+        <Container>
             <div>
                 <h1>Bem vindo à goFlux</h1>
                 <span>Conectamos empresas à prestadores de serviço.</span>
@@ -42,6 +42,6 @@ export default function Index() {
             {modalRegisterOpen && (
                 <RegisterModal setModalRegisterOpen={setModalRegisterOpen} />
             )}
-        </LoginContainer>
+        </Container>
     );
-}
+};

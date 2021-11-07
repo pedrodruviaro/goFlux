@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const RegisterModal = styled.div`
+export const Container = styled.div`
     padding: 2rem;
     width: min(30rem, 100%);
     background-color: ${(props) => props.theme.light};
