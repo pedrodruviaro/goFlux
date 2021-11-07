@@ -17,7 +17,6 @@ class AuthValidation {
             name: Joi.string().min(6).max(150).required(),
             site: Joi.string().min(10).max(255).required(),
             about: Joi.string().min(10).max(255).required(),
-            user_type: Joi.string().min(6).max(255).required(),
         });
 
         return schema.validate(data);

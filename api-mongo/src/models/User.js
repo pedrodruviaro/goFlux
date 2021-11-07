@@ -40,13 +40,6 @@ const UserSchema = new mongoose.Schema(
             min: 10,
             max: 255,
         },
-        user_type: {
-            type: String,
-            required: true,
-            min: 10,
-            max: 150,
-            unique: true,
-        },
     },
     { timestamps: true }
 );

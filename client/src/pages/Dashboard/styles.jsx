@@ -17,10 +17,4 @@ export const Container = styled.div`
             font-size: clamp(2rem, 4vw, 2.5rem);
         }
     }
-
-    ul {
-        display: grid;
-        gap: 1rem;
-        margin-top: 2rem;
-    }
 `;

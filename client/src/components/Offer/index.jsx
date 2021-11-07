@@ -1,10 +1,11 @@
 import React from "react";
 import moment from "moment";
-import { Offer } from "./styles";
+import { Container } from "./styles";
+import { Link } from "react-router-dom";
 
-export default function Index({ offer }) {
+export function Offer({ offer }) {
     return (
-        <Offer key={offer.createdAt}>
+        <Container>
             <div>
                 <span>De: {offer.from}</span>
                 <span>Para: {offer.to}</span>
@@ -19,8 +20,8 @@ export default function Index({ offer }) {
             <div>
                 <span>Lances: {offer.bids.length}</span>
                 <span>{moment(offer.createdAt).format("DD/MM/YYYY")}</span>
-                <a href="/">Ver Oferta</a>
+                <Link to={`/offer/${offer._id}`}>Ver Oferta</Link>
             </div>
-        </Offer>
+        </Container>
     );
 }

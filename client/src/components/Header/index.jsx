@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Hamburger, Navbar, HeaderHome } from "./styles";
 import Profile from "../Profile";
 import { Link } from "react-router-dom";
 
-export default function Index(props) {
+export function Header(props) {
     const [navbarOpen, setNavbarOpen] = useState(false);
     return (
         <HeaderHome>
@@ -28,9 +28,9 @@ export default function Index(props) {
                 </Navbar>
             ) : (
                 <Navbar open={navbarOpen}>
-                    <Profile />
                     <Link to="/dashboard">Minhas Ofertas</Link>
                     <Link to="/offers">Todas as ofertas</Link>
+                    <Profile />
                 </Navbar>
             )}
         </HeaderHome>

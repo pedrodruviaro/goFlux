@@ -38,7 +38,6 @@ class AuthController {
                 name: req.body.name,
                 site: req.body.site,
                 about: req.body.about,
-                user_type: req.body.user_type,
             });
 
             // inserting into DB
