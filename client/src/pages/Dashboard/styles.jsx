@@ -13,8 +13,13 @@ export const Container = styled.div`
 
         align-items: center;
 
+        button {
+            margin-right: 1rem;
+        }
+
         h2 {
             font-size: clamp(2rem, 4vw, 2.5rem);
+            margin-left: 1rem;
         }
 
         h4 {

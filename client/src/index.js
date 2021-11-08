@@ -7,6 +7,8 @@ import { primaryTheme } from "./styles/Theme";
 import { ResetStyles } from "./styles/ResetStyles";
 import { GlobalStyles } from "./styles/GlobalStyles";
 
+import "./styles/animations.css";
+
 ReactDOM.render(
     <React.StrictMode>
         <ThemeProvider theme={primaryTheme}>

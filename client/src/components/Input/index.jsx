@@ -11,7 +11,7 @@ export const Input = ({
     error,
 }) => {
     return (
-        <Container>
+        <Container className="animate-pop">
             {label}
             <input
                 type={type}

@@ -6,7 +6,7 @@ import { AiOutlineArrowDown } from "react-icons/ai";
 
 export const Offer = ({ offer, bid = true }) => {
     return (
-        <Container>
+        <Container className="animate-up">
             <div>
                 <span>De: {offer.from}</span>
                 <AiOutlineArrowDown />
@@ -31,7 +31,11 @@ export const Offer = ({ offer, bid = true }) => {
             <span className="date">
                 {moment(offer.createdAt).format("DD/MM/YYYY")}
             </span>
-            {bid && <Link to={`/offer/${offer._id}`}>Ver Oferta</Link>}
+            {bid && (
+                <Link className="animate-pop" to={`/offer/${offer._id}`}>
+                    Ver Oferta
+                </Link>
+            )}
         </Container>
     );
 };
