@@ -16,5 +16,10 @@ export const Container = styled.div`
         h2 {
             font-size: clamp(2rem, 4vw, 2.5rem);
         }
+
+        h4 {
+            font-size: 1.25rem;
+            margin: 1rem 0;
+        }
     }
 `;

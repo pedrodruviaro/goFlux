@@ -11,13 +11,15 @@ export const Dashboard = () => {
     const { user } = useAuth();
     const [offers, setOffers] = useState([]);
     const [modalOpen, setModalOpen] = useState(false);
+    const [newOffer, setNewOffer] = useState(false);
 
     useEffect(() => {
         (async () => {
-            const { data } = await api.get(`/offer/${user._id}`);
+            const { data } = await api.get(`/offer/all`);
             setOffers(data);
         })();
-    }, [user]);
+        setNewOffer(false);
+    }, [user, newOffer]);
 
     return (
         <>
@@ -25,14 +27,23 @@ export const Dashboard = () => {
             <Container>
                 <div>
                     <h2>Minhas Ofertas</h2>
-                    <Button secondary onClick={() => setModalOpen(true)}>
+                    <Button
+                        type="button"
+                        secondary
+                        onClick={() => setModalOpen(true)}
+                    >
                         Nova Oferta
                     </Button>
                 </div>
-                {offers.length === 0 && <h3>Sem ofertas cadastradas.</h3>}
+                {offers.length === 0 && <h4>Sem ofertas cadastradas.</h4>}
                 <OffersList offers={offers} />
 
-                {modalOpen && <NewOfferModal setModalOpen={setModalOpen} />}
+                {modalOpen && (
+                    <NewOfferModal
+                        setNewOffer={setNewOffer}
+                        setModalOpen={setModalOpen}
+                    />
+                )}
             </Container>
         </>
     );

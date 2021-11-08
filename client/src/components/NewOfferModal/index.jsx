@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useClickOutside } from "../../hooks/useClickOutside";
 import { useForm } from "../../hooks/useForm";
 
@@ -8,7 +8,7 @@ import { Button } from "../Button";
 import { Radio } from "../Radio";
 import { api } from "../../services/api";
 
-export const NewOfferModal = ({ setModalOpen }) => {
+export const NewOfferModal = ({ setModalOpen, setNewOffer }) => {
     const [isOpen, setIsOpen] = useState(true);
     const [amountType, setAmountType] = useState("TON");
 
@@ -39,15 +39,11 @@ export const NewOfferModal = ({ setModalOpen }) => {
                 amount_type: amountType,
             };
             await api.post("/offer/new", newOffer);
-            console.log("oferta criada");
+            setNewOffer(true);
+            setModalOpen(false);
+            setIsOpen(false);
         }
     };
-
-    useEffect(() => {
-        (async () => {
-            // const {data} = await api.get('/offer/')
-        })();
-    }, []);
 
     return (
         <Container active={isOpen} ref={domNode}>

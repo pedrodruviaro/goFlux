@@ -1,6 +1,6 @@
 import React from "react";
 import { Offer } from "../Offer";
-import { Container } from "../Offer/styles";
+import { Container } from "./styles";
 
 export const OffersList = ({ offers }) => {
     return (
