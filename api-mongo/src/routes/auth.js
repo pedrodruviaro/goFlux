@@ -3,7 +3,7 @@ const AuthController = require("../controllers/AuthController");
 
 /*
     @POST - /api/auth/register
-    body - email, password, doc, name, site, about, user_type
+    body - email, password, doc, name, site, about
 */
 router.post("/register", AuthController.register);
 

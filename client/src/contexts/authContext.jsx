@@ -37,11 +37,13 @@ export default function AuthContextProvider({ children }) {
             const { data } = await api.post("/auth/register", userData);
             if (!data) throw Error("Something went wrong");
 
+            console.log(data);
             const { email, password } = userData;
-            login({ email, password });
+            await login({ email, password });
         } catch (err) {
             setAuthorized(false);
             console.error(err.response.data);
+            setLoading(false);
         }
     }
 

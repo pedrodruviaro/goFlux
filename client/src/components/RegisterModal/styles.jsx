@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
     padding: 2rem;
-    width: min(30rem, 100%);
+    width: min(40rem, 100%);
     background-color: ${(props) => props.theme.light};
     color: ${(props) => props.theme.dark};
 

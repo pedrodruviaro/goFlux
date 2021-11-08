@@ -15,8 +15,8 @@ class AuthValidation {
                 .regex(passwordPattern),
             doc: Joi.string().required().regex(docPattern),
             name: Joi.string().min(6).max(150).required(),
-            site: Joi.string().min(10).max(255).required(),
-            about: Joi.string().min(10).max(255).required(),
+            site: Joi.string().min(5).max(255).required(),
+            about: Joi.string().min(5).max(255).required(),
         });
 
         return schema.validate(data);
