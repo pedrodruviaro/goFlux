@@ -6,7 +6,7 @@ router.use(tokenValidation);
 
 /*
     @POST - /api/offer/new
-    body - id_embarcador, from, to, initial_value, amount, amount_type, finished
+    body - id_embarcador, from, to, initial_value, amount, amount_type
 */
 router.post("/new", OfferController.new);
 
@@ -18,12 +18,20 @@ router.post("/bid", OfferController.newBid);
 
 /*
     @GET - /api/offer/all
+    - all from a user
 */
-router.get("/all", OfferController.getAll);
+router.get("/all", OfferController.getFromUser);
 
 /*
     @GET - /api/offer/:id
+    - single offer
 */
 router.get("/:id", OfferController.getById);
+
+/*
+    @GET - /api/offer
+    - all offers in db
+*/
+router.get("/", OfferController.getAll);
 
 module.exports = router;

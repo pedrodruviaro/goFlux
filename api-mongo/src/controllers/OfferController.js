@@ -72,7 +72,7 @@ class OfferController {
         }
     }
 
-    async getAll(req, res) {
+    async getFromUser(req, res) {
         try {
             const offers = await Offer.find({ finished: false });
             return res.status(200).json(offers);
@@ -86,6 +86,15 @@ class OfferController {
 
         try {
             const offers = await Offer.find({ _id: idParams });
+            return res.status(200).json(offers);
+        } catch (error) {
+            return res.status(500).json({ error: error.response });
+        }
+    }
+
+    async getAll(req, res) {
+        try {
+            const offers = await Offer.find();
             return res.status(200).json(offers);
         } catch (error) {
             return res.status(500).json({ error: error.response });
