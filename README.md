@@ -75,6 +75,7 @@ Os dados recebidos deveriam ser armazenados em um banco de dados. Também deveri
 
 -   Considerei o desafio proposto de extrema importância para o entendimento geral das funções da empresa. Inclusive tive que relizar algumas pesquisas sobre o modelo de negócios para entender melhor o funcionamento, o que agregou bastante.
 -   Devido ao período de tempo e demais atividades minhas, acredito que consegui construir um prótotipo interessante, porém algumas funcionalidades podem (e devem) ser melhoradas e aperfeiçoadas, principalmente na parte de formulários e comunicação de dados.
+-   Alguns problemas ficaram sem correção até o momento, como o envio de lance pelo fron-end e um bug de buscar uma única oferta na api. Mas considero um resultado satisfatório como um todo.
 -   Apesar do resultado, foi um ótimo teste de estudo, onde pude fazer uma autoavaliação do que eu sabia e o que preciso melhorar nos próximos passos da carreira.
 
 ---
