@@ -59,11 +59,13 @@ Os dados recebidos deveriam ser armazenados em um banco de dados. Também deveri
 
 ## Sobre o front-end 👁️
 
+-   Caso queiram fazer o login direto **( email: goflux@goflux.com senha: goflux1)**
 -   Validação de formulário com hook próprio para entregar uma boa experiência de usuário.
 -   Utilização de paleta de cores próximas à da empresa
 -   Pequenas animações em CSS para dar vida à certos componentes
 -   Rotas privadas e sistema de autenticação parcial (não finalizado 100%)
 -   Styled-components para a estilização 💅🏾
+-   Regex para validação de formulários, assim como no backend
 
 ![Página de Login](https://i.ibb.co/ykmvgFT/localhost-3000-2.png) ![Dashboard](https://i.ibb.co/XXT5pDv/localhost-3000-3.png)
 

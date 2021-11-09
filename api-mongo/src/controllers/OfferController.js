@@ -17,11 +17,14 @@ class OfferController {
             to,
             initial_value,
             amount,
-            amount_type,
+            amount_type: req.body.amount_type.toLowerCase(),
         };
 
         if (amount_type.toLowerCase() === "ton") {
+            //ton -> kg
             offer.amount = amount * 1000;
+        } else if (amount_type.toLowerCase() === "kg") {
+            offer.amount = amount;
         }
 
         try {
@@ -73,8 +76,10 @@ class OfferController {
     }
 
     async getFromUser(req, res) {
+        const { userId } = req.user;
+
         try {
-            const offers = await Offer.find({ finished: false });
+            const offers = await Offer.find({ id_customer: userId });
             return res.status(200).json(offers);
         } catch (error) {
             return res.status(500).json({ error: error.response });

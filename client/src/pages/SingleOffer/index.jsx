@@ -5,12 +5,14 @@ import { Offer } from "../../components/Offer";
 import { Button } from "../../components/Button";
 import { Bid } from "../../components/Bid";
 import { Header } from "../../components/Header";
+import { NewBidModal } from "../../components/NewBidModal";
 import { Container } from "./styles";
 
 export const SingleOffer = () => {
     const [offer, setOffer] = useState(null);
     const idParams = useParams().id;
     const [loading, setLoading] = useState(true);
+    const [bidModalOpen, setBidModalOpen] = useState(false);
 
     useEffect(() => {
         (async () => {
@@ -34,7 +36,9 @@ export const SingleOffer = () => {
                 <section>
                     <div>
                         <h3>Lances</h3>
-                        <Button secondary>Novo Lance</Button>
+                        <Button secondary onClick={() => setBidModalOpen(true)}>
+                            Novo Lance
+                        </Button>
                     </div>
                     {offer.bids.length === 0 && (
                         <h4>Sem lances até o momento</h4>
@@ -45,6 +49,13 @@ export const SingleOffer = () => {
                         ))}
                     </ul>
                 </section>
+
+                {bidModalOpen && (
+                    <NewBidModal
+                        offer={offer}
+                        setBidModalOpen={setBidModalOpen}
+                    />
+                )}
             </Container>
         </>
     );

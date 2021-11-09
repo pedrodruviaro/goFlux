@@ -8,7 +8,7 @@ export const Offers = () => {
 
     useEffect(() => {
         (async () => {
-            const { data } = await api.get(`/offer/`);
+            const { data } = await api.get(`/offer/all`);
             setOffers(data);
         })();
     }, []);

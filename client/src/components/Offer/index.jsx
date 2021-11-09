@@ -15,16 +15,19 @@ export const Offer = ({ offer, bid = true }) => {
             <div>
                 Carga:{" "}
                 <strong>
-                    {offer.amount_type === "TON"
+                    {offer.amount_type === "ton"
                         ? offer.amount / 1000
                         : offer.amount}{" "}
-                    TON
+                    {offer.amount_type.toLowerCase()}
                 </strong>
             </div>
             <div>
                 <p>
                     Valor Inicial:{" "}
-                    <strong>R$ {offer.initial_value} / TON</strong>
+                    <strong>
+                        R$ {offer.initial_value} /{" "}
+                        {offer.amount_type.toLowerCase()}
+                    </strong>
                 </p>
                 <span>Lances: {offer.bids.length}</span>
             </div>

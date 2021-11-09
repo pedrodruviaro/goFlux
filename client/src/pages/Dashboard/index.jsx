@@ -15,7 +15,7 @@ export const Dashboard = () => {
 
     useEffect(() => {
         (async () => {
-            const { data } = await api.get(`/offer/all`);
+            const { data } = await api.get(`/offer/user`);
             setOffers(data);
         })();
         setNewOffer(false);

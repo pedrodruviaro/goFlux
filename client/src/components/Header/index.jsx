@@ -7,9 +7,9 @@ export const Header = ({ home }) => {
     const [navbarOpen, setNavbarOpen] = useState(false);
     return (
         <HeaderHome>
-            <h1>
+            <Link to="/">
                 <img src="/images/logo.png" alt="" />
-            </h1>
+            </Link>
             <Hamburger
                 active={navbarOpen}
                 onClick={() => setNavbarOpen(!navbarOpen)}

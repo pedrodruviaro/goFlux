@@ -10,7 +10,7 @@ export const HeaderHome = styled.header`
 
     position: relative;
 
-    h1 {
+    a {
         max-width: 150px;
     }
 `;

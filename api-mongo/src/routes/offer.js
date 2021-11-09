@@ -20,18 +20,18 @@ router.post("/bid", OfferController.newBid);
     @GET - /api/offer/all
     - all from a user
 */
-router.get("/all", OfferController.getFromUser);
+router.get("/user", OfferController.getFromUser);
+
+/*
+    @GET - /api/offer
+    - all offers in db
+*/
+router.get("/all", OfferController.getAll);
 
 /*
     @GET - /api/offer/:id
     - single offer
 */
 router.get("/:id", OfferController.getById);
-
-/*
-    @GET - /api/offer
-    - all offers in db
-*/
-router.get("/", OfferController.getAll);
 
 module.exports = router;
