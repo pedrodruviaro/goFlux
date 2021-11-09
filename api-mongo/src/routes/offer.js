@@ -11,7 +11,7 @@ router.use(tokenValidation);
 router.post("/new", OfferController.new);
 
 /*
-    @POST - /api/offer/new
+    @POST - /api/offer/bid
     body - id_transportador, id_offer, value, amount 
 */
 router.post("/bid", OfferController.newBid);
